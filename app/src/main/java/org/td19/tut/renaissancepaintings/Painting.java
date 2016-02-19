@@ -1,13 +1,14 @@
 package org.td19.tut.renaissancepaintings;
 
 /**
- * Created by the on 2/19/16.
+ * Contains the data for a single image on the app.
+ * Created by TheDestroyer19 on 2/19/16.
  */
-public class Painting
+class Painting
 {
 
-    private String description;
-    private int id;
+    private final String description;
+    private final int id;
     public Painting(String s, int i) {
         this.description = s;
         this.id = i;

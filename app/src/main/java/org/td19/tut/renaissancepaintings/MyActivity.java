@@ -1,5 +1,6 @@
 package org.td19.tut.renaissancepaintings;
 
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,7 +37,12 @@ public class MyActivity extends AppCompatActivity {
 
             buttonItem.setContentDescription(painting.getDescription());
 
-            buttonItem.setImageDrawable(getResources().getDrawable(painting.getId()));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                buttonItem.setImageDrawable(getResources().getDrawable(painting.getId(), null));
+            } else
+                //For older devices
+                //noinspection deprecation
+                buttonItem.setImageDrawable(getResources().getDrawable(painting.getId()));
 
             buttonItem.setOnClickListener(displayPaintingInformation);
 
@@ -44,7 +50,7 @@ public class MyActivity extends AppCompatActivity {
         }
     }
 
-    private View.OnClickListener displayPaintingInformation =
+    private final View.OnClickListener displayPaintingInformation =
             new View.OnClickListener() {
                 public void onClick(View btn) {
                     String paintingDescription = (String) btn.getContentDescription();

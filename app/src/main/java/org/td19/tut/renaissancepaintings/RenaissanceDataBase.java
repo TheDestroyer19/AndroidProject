@@ -1,10 +1,11 @@
 package org.td19.tut.renaissancepaintings;
 
 /**
- * Created by Chris Clegg on 2/19/16.
+ * Contains the strings and numbers used to generate the Painting objects
+ * Created by TheDestroyer19 on 2/19/16.
  */
-public class RenaissanceDataBase {
-    public static String description[] =
+class RenaissanceDataBase {
+    public final static String description[] =
             {
                     "Venus of Urbino\nTitan, 1538",
                     "St. John the Baptist\nLeonardo da Vinci, 1516",
@@ -14,7 +15,7 @@ public class RenaissanceDataBase {
                     "Mars and Venus\nSandro Bottcelli, 1483"
             };
 
-    public static int id[] =
+    public final static int id[] =
             {
                     R.drawable.painting1, //Venus
                     R.drawable.painting2, //St John
